@@ -3,7 +3,7 @@ $(function () {
 });
 
 $(function (){
-    let url = "https://jsonlaceholder.typicode.com/photos";
+    let url = "https://image.freepik.com/free-icon/wordpress-logo_318-9854.jpg";
     $("#getPost".on("click", function(){
         $.ajax({
             url: url,
