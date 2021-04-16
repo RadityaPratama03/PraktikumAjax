@@ -2,24 +2,36 @@ $(function () {
     $("#nama").load("test.txt");
 });
 
-$(function (){
-    let url = "https://image.freepik.com/free-icon/wordpress-logo_318-9854.jpg";
-    $("#getPost".on("click", function(){
+$(function () {
+    let url = "https://jsonplaceholder.typicode.com/photos";
+    
+    $("#getPost").on("click", function () {
+        //memanggil jquery ajax
         $.ajax({
+            //memanggil variable url parameter
             url: url,
+            //menggunakan get request
             type: 'GET',
-            success: function (data) { 
+            //jika sukses
+            success: function (data) {
                 let data_html = '';
-                $.each(data, function (i, item) { 
+                //looping data(ambil satu persatu data)
+                $.each(data, function (i, item) {
+                    //mengkonversi hasil loop tadi ke html
                     data_html +=
-                        '<cbr>' +
-                        '<img src ="' + item.thumnailUrl + '" alt="" >' +
-                        '<cbr>' +
-                        '<h1>' + item.id + '.' + item.title + '</h1>'
+                        '<br>' +
+                        '<img src="' + item.thumbnailUrl + '"alt="">' +
+                        '<br>' +
+                        '<h1>' + item.id + '. ' + item.title + '</h1>'
                 });
+
+                //memasukkan hasil loop tadi ke div dengan id #data_hasil_dari_internet
+
                 $("#data_hasil_dari_internet").html(data_html);
-            }, 
-            error: function(error) {
+            },
+            //jika error
+            error: function (error) {
+                //tampilkan console log
                 console.log(error);
             }
         });
