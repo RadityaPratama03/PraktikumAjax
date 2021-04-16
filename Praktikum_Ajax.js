@@ -16,12 +16,12 @@ $(function (){
                     '<img src ="' + item.thumnailUrl + '" alt="" >' +
                     '<cbr>' +
                     '<h1>' + item.id + '.' + item.title + '</h1>'
-                 });
-                 $("#data_hasil_dari_internet").html(data_html);
+                });
+                $("#data_hasil_dari_internet").html(data_html);
             }, 
             error: function(error) {
                 console.log(error);
             }
-        })
+        });
     });
 });
