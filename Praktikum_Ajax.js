@@ -12,10 +12,10 @@ $(function (){
                 let data_html = '';
                 $.each(data, function (i, item) { 
                     data_html +=
-                    '<cbr>' +
-                    '<img src ="' + item.thumnailUrl + '" alt="" >' +
-                    '<cbr>' +
-                    '<h1>' + item.id + '.' + item.title + '</h1>'
+                        '<cbr>' +
+                        '<img src ="' + item.thumnailUrl + '" alt="" >' +
+                        '<cbr>' +
+                        '<h1>' + item.id + '.' + item.title + '</h1>'
                 });
                 $("#data_hasil_dari_internet").html(data_html);
             }, 
